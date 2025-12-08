@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: linear-gradient(180deg, #0c0c0f, #1a1a1f);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+h1 {
+  font-size: 54px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #fff, #dcdcdc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: titleFadeIn 1s ease-out forwards;
+}
+
+@keyframes titleFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ANIMACIÓN SUBTITLE */
+.subtitle {
+  font-size: 18px;
+  opacity: 0;
+  margin-bottom: 60px;
+  animation: fadeUp 1.4s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+.options {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.option-card {
+  display: block;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+
+  /* Animación inicial */
+  opacity: 0;
+  transform: translateY(25px);
+  animation: cardAppear 0.8s ease-out forwards;
+}
+
+/* El STAGGER: cada card tarda un poco más */
+.option-card:nth-child(1) { animation-delay: .15s; }
+.option-card:nth-child(2) { animation-delay: .30s; }
+.option-card:nth-child(3) { animation-delay: .45s; }
+.option-card:nth-child(4) { animation-delay: .60s; }
+
+@keyframes cardAppear {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.option-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.option-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.option-card p {
+  font-size: 16px;
+  opacity: 0.75;
+}
+
+
+/* ===========================
+   RESPONSIVE - CELULARES
+   =========================== */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .options {
+    gap: 30px;
+  }
+
+  .option-card {
+    padding: 32px 24px;
+  }
+
+  .option-card h2 {
+    font-size: 24px;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .container {
+    padding: 100px 20px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .option-card {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .option-card h2 {
+    font-size: 20px;
+  }
+
+  .option-card p {
+    font-size: 14px;
+  }
+}

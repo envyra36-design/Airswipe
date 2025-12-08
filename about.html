@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirSwip - Qué es</title>
+  <link rel="stylesheet" href="about-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo">AirSwip</div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="about.html">Info</a>
+      <a href="wwa.html">wwa.</a>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-container">
+        
+      <img src="hand.jpg" alt="AirSwip Logo" class="about-image">
+
+      <h2>¿Qué es AirSwip?</h2>
+      <p>
+        AirSwip es un sistema de control gestual sin contacto que transforma tus movimientos naturales en acciones digitales.
+        Gracias al <strong>MotionLayers Engine</strong>, analiza la posición y dinámica de tu mano para ofrecer control fluido y preciso.
+      </p>
+
+      <button class="btn" onclick="openModal('modal-quees')">Ver más</button>
+
+      <h2>AirSwip 0.5</h2>
+      <p>
+        La versión actual funciona como una base tecnológica optimizada con <strong>MediaPipe</strong>, ofreciendo estabilidad,
+        baja latencia y respuesta intuitiva para navegación, selección y manipulación de objetos digitales.
+      </p>
+
+      <button class="btn" onclick="openModal('modal-version')">Detalles técnicos</button>
+
+      <h2>Próxima evolución</h2>
+      <p>
+        AirSwip continúa expandiéndose: más gestos, mejor compatibilidad y nuevas experiencias.
+      </p>
+
+      <button class="btn" onclick="openModal('modal-futuro')">Roadmap</button>
+
+    </div>
+  </section>
+
+  <!-- MODALES -->
+  <div id="modal-quees" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-quees')">&times;</span>
+      <h2>¿Qué es AirSwip?</h2>
+      <p>
+        AirSwip redefine la interacción digital eliminando la necesidad de contacto físico.  
+        Su motor MotionLayers analiza capas de información: geometría de la mano, intención, velocidad,
+        aceleración y continuidad.  
+        Todo ocurre en tiempo real, generando una experiencia natural y sin fricción.
+      </p>
+    </div>
+  </div>
+
+  <div id="modal-version" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-version')">&times;</span>
+      <h2>AirSwip 0.5</h2>
+      <p>
+        AirSwip 0.5 integra MediaPipe de forma optimizada para obtener estabilidad superior.  
+        Se centra en:  
+        <br><br>
+        • Latencia reducida  
+        • Detección limpia de landmarks  
+        • Filtrado inteligente de ruido  
+        • Movimientos continuos y predecibles  
+      </p>
+    </div>
+  </div>
+
+  <div id="modal-futuro" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-futuro')">&times;</span>
+      <h2>Roadmap</h2>
+      <p>
+        Lo próximo en AirSwip:  
+        <br><br>
+        • Compatibilidad expandida para múltiples plataformas  
+        • Cargar presentaciones propias  
+        • Integración para gaming con respuesta ultra baja  
+        • Nuevos gestos y navegación más natural  
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © 2025 ENVYRΛ — AirSwipe. Motion redefined. Rights reserved.
+  </footer>
+
+
+  <!-- SCRIPT MODALES -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+      document.body.classList.add("blur-active");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+      document.body.classList.remove("blur-active");
+    }
+
+    window.onclick = function (event) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(m => {
+        if (event.target === m) {
+          m.style.display = "none";
+          document.body.classList.remove("blur-active");
+        }
+      });
+    };
+  </script>
+
+</body>
+</html>

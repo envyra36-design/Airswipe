@@ -1,0 +1,197 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0c0c0f, #1a1a1f);
+  color: white;
+  font-family: "Manrope", "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SLIDE TEXT */
+#slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 80%;
+  word-wrap: break-word;
+  pointer-events: none;
+
+  /* Apariencia */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  padding: 30px 50px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.07);
+
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* WEBCAM PREVIEW */
+#webcam {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 260px;
+  border-radius: 18px;
+  opacity: 0.85;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.4);
+}
+
+/* INPUT PANEL */
+#inputContainer {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  width: 320px;
+}
+
+/* TEXTAREA */
+#slidesInput {
+  width: 100%;
+  height: 160px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 12px;
+  color: white;
+  font-size: 15px;
+  resize: none;
+}
+
+/* LABEL + INPUT LAYOUT */
+.control-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* NUMBER + COLOR PICKER */
+#fontSizeInput, 
+#colorInput {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* BTN */
+#startBtn {
+  padding: 12px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(20px);
+  color: white;
+  transition: 0.3s ease;
+}
+
+#startBtn:hover {
+  background: rgba(255,255,255,0.32);
+  transform: translateY(-2px);
+}
+
+/* MOBILE FIXES */
+@media (max-width: 600px) {
+  #inputContainer {
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+  }
+  
+  #webcam {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  #slide {
+    font-size: 9vw;
+    padding: 22px 28px;
+    border-radius: 22px;
+    max-width: 92%;
+  }
+
+  #webcam {
+    width: 160px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 14px;
+  }
+
+  #inputContainer {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 20px;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  #slidesInput {
+    height: 120px;
+    font-size: 14px;
+  }
+
+  .control-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  #fontSizeInput,
+  #colorInput {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #startBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}

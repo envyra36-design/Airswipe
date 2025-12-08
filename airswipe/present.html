@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación por Gestos - AirSwip</title>
+<link rel="stylesheet" href="stylepresent.css">
+</head>
+<body>
+
+<div id="slide">Diapositiva 1</div>
+<video id="webcam" autoplay playsinline></video>
+
+<div id="inputContainer">
+  <textarea id="slidesInput" placeholder="Escribí cada diapositiva en una línea"></textarea>
+  
+  <div class="control-group">
+    <label>Tamaño (px):</label>
+    <input type="number" id="fontSizeInput" value="50" min="10" max="200">
+  </div>
+  
+  <div class="control-group">
+    <label>Color:</label>
+    <input type="color" id="colorInput" value="#ffffff">
+  </div>
+  
+  <button id="startBtn">Iniciar Presentación</button>
+</div>
+
+<script type="module" src="script2.js"></script>
+</body>
+</html>
